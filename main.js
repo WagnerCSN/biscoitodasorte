@@ -18,13 +18,7 @@ let itemTotal= listaBilhetes.length
 //eventos
 btnOpen.addEventListener('click', handleTryClick)
 btnChange.addEventListener('click', toggleScreen)
-document.addEventListener('keydown', function(e){
-    if(e.key == 'Enter'){
-        if(screen1.classList.("hide"))
-        handleTryClick(e)
-       
-    }
-})
+document.addEventListener('keypress', PressEnter)
 
 //funções
 function toggleScreen(){
@@ -57,10 +51,17 @@ function handleTryClick(event){
      index++ 
 }
 
-/*function keydowns(e){
-    if(e.key == 'Enter'){
-        toggleScreen()
+function PressEnter(e){
+    if(e.which == 13){
+       if (screen1.classList.value == "screen1 hide"){
+            toggleScreen()
+        }else{
+            handleTryClick(e)
+        }
     }
-}*/
+}
+
+
+
 
 
